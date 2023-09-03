@@ -26,6 +26,12 @@ footer {
    align-items: center;
 }
 
+#temp-result {
+   min-height: 60px;
+   border: 6px solid grey;
+   border-radius: 4px;
+}
+
 .content {
    flex: 1 1 auto;
    display: flex;
@@ -41,26 +47,37 @@ footer {
    width: calc(100%/3);
    justify-content: center;
    align-items: center;
+   min-width: 284px;
+   min-height: 350px;
+}
+
+.app-container > * {
+   min-width: 220px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .temp-buttons-container {
    display: flex;
+   gap: 4px;
 }
 
 .temp-format-button {
    flex: 1 1 0;
+   padding: 8px 16px;
 }
 
 /* DEBUGGING */
 
 body > * {
-   border: 2px solid red;
+   /* border: 2px solid red; */
 }
 
 .app-container {
-   border: 2px solid red;
+   /* border: 2px solid red; */
 }
 
 .app-container > * {
-   border: 2px solid red;
+   /* border: 2px solid red; */
 }
