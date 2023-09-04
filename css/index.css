@@ -95,7 +95,7 @@ body > * {
 }
 
 .app-container {
-   border: 2px solid red;
+   /* border: 2px solid red; */
 }
 
 .app-container > * {
