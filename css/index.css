@@ -43,7 +43,6 @@ footer {
    display: flex;
    flex-direction: column;
    gap: 16px;
-   height: calc(100%/3);
    width: calc(100%/3);
    justify-content: center;
    align-items: center;
@@ -61,11 +60,25 @@ footer {
 .temp-buttons-container {
    display: flex;
    gap: 4px;
+   justify-content: space-evenly;
+}
+
+.buttons-column {
+   display: flex;
+   flex-direction: column;
+   gap: 4px;
+}
+
+.buttons-column > * {
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .temp-format-button {
    flex: 1 1 0;
    padding: 8px 16px;
+   border: 3px solid grey;
 }
 
 /* DEBUGGING */
@@ -75,9 +88,17 @@ body > * {
 }
 
 .app-container {
-   /* border: 2px solid red; */
+   border: 2px solid red;
 }
 
 .app-container > * {
    /* border: 2px solid red; */
+}
+
+.temp-buttons-container {
+   border: 2px solid red;
+}
+
+.temp-buttons-container > * {
+   border: 2px solid blue;
 }

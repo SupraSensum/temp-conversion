@@ -5,10 +5,8 @@
 //    update the formula to use
 //    perform calculation
 
-const inputField = document.getElementById('input-temp');
-const resultField = document.getElementById('temp-result');
-const celsiusButton = document.getElementById('c-temp-button');
-const fahrenheitButton = document.getElementById('f-temp-button');
+const fromTempFormatButtons = document.querySelectorAll('.from-temp-column-buttons-container button');
+const toTempFormatButtons = document.querySelectorAll('.to-temp-column-buttons-container button');
 
 // depth level #1 is the conversion from
 // depth level #2 is the conversion to
@@ -30,8 +28,8 @@ const tempConversionAlgorithms = {
    },
 };
 
-inputField.addEventListener('input', calculate);
-
+let fromTempFormat = 'fahrenheit';
+let toTempFormat = 'fahrenheit';
 
 function calculate() {
 
