@@ -81,6 +81,13 @@ footer {
    border: 3px solid grey;
 }
 
+.selected {
+   background-color: #378037;
+   border: 3px solid black;
+   font-weight: bolder;
+   color: white;
+}
+
 /* DEBUGGING */
 
 body > * {
@@ -96,9 +103,9 @@ body > * {
 }
 
 .temp-buttons-container {
-   border: 2px solid red;
+   /* border: 2px solid red; */
 }
 
 .temp-buttons-container > * {
-   border: 2px solid blue;
+   /* border: 2px solid blue; */
 }

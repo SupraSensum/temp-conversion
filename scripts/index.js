@@ -1,12 +1,6 @@
-// upon text field change
-//    perform calculation
-// 
-// upon temp format button click
-//    update the formula to use
-//    perform calculation
-
 const fromTempFormatButtons = document.querySelectorAll('.from-temp-column-buttons-container button');
 const toTempFormatButtons = document.querySelectorAll('.to-temp-column-buttons-container button');
+const userInputField = document.getElementById('input-temp');
 
 // depth level #1 is the conversion from
 // depth level #2 is the conversion to
@@ -28,9 +22,37 @@ const tempConversionAlgorithms = {
    },
 };
 
+const tempScaleShorthandMap = {
+   '°F': 'fahrenheit',
+   '°C': 'celsius',
+   'K': 'kelvin',
+};
+
 let fromTempFormat = 'fahrenheit';
 let toTempFormat = 'fahrenheit';
 
-function calculate() {
+// event listeners
+fromTempFormatButtons.forEach((button) => button.addEventListener('click', () => {
+   fromTempFormat = tempScaleShorthandMap[button.textContent];
+   fromTempFormatButtons.forEach((button) => button.classList.remove('selected'));
+   button.classList.add('selected');
+   calculate();
+}));
+toTempFormatButtons.forEach((button) => button.addEventListener('click', () => {
+   toTempFormat = tempScaleShorthandMap[button.textContent];
+   toTempFormatButtons.forEach((button) => button.classList.remove('selected'));
+   button.classList.add('selected');
+   calculate();
+}));
 
+function calculate() {
+   tempConversionAlgorithms[fromTempFormat][toTempFormat]();
 }
+
+// upon text field change
+//    update input temp variable
+//    perform calculation: tempConversionAlgorithms[fromTempFormat][toTempFormat](inputTempVal)
+// 
+// anytime from/to button is pressed
+//    update from/to variables
+//    perform calculation: tempConversionAlgorithms[fromTempFormat][toTempFormat](inputTempVal)
