@@ -29,7 +29,7 @@ const tempScaleShorthandMap = {
 };
 const NUM_OF_DIGITS_AFTER_DEC_TO_ROUND = 2;
 
-let fromTempFormat = 'fahrenheit';
+let fromTempFormat = 'celsius';
 let toTempFormat = 'fahrenheit';
 
 // 
