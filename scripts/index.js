@@ -32,7 +32,10 @@ const NUM_OF_DIGITS_AFTER_DEC_TO_ROUND = 2;
 let fromTempFormat = 'fahrenheit';
 let toTempFormat = 'fahrenheit';
 
+// 
 // event listeners
+// 
+
 fromTempFormatButtons.forEach((button) => button.addEventListener('click', () => {
    fromTempFormat = tempScaleShorthandMap[button.textContent];
    fromTempFormatButtons.forEach((button) => button.classList.remove('selected'));
@@ -47,19 +50,16 @@ toTempFormatButtons.forEach((button) => button.addEventListener('click', () => {
 }));
 userInputField.addEventListener('input', calculate);
 
+// 
 // run upon load
+// 
+
 calculate();
 
+// 
 // function declarations
+// 
 
 function calculate() {
    tempResultField.textContent = tempConversionAlgorithms[fromTempFormat][toTempFormat](+userInputField.value).toFixed(NUM_OF_DIGITS_AFTER_DEC_TO_ROUND);
 }
-
-// upon text field change
-//    update input temp variable
-//    perform calculation: tempConversionAlgorithms[fromTempFormat][toTempFormat](inputTempVal)
-// 
-// anytime from/to button is pressed
-//    update from/to variables
-//    perform calculation: tempConversionAlgorithms[fromTempFormat][toTempFormat](inputTempVal)
