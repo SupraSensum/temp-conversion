@@ -27,6 +27,24 @@ footer {
    align-items: center;
 }
 
+footer {
+   flex-direction: column;
+   gap: 8px;
+   padding: 8px 16px;
+}
+
+footer img {
+   max-height: 32px;
+}
+
+a {
+   text-decoration: none;
+}
+
+a:hover {
+   text-decoration: underline;
+}
+
 label,
 input {
    text-align: center;
