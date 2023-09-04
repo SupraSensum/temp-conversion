@@ -1,6 +1,7 @@
 const fromTempFormatButtons = document.querySelectorAll('.from-temp-column-buttons-container button');
 const toTempFormatButtons = document.querySelectorAll('.to-temp-column-buttons-container button');
 const userInputField = document.getElementById('input-temp');
+const tempResultField = document.getElementById('temp-result');
 
 // depth level #1 is the conversion from
 // depth level #2 is the conversion to
@@ -21,12 +22,12 @@ const tempConversionAlgorithms = {
       'kelvin': (temp) => temp,
    },
 };
-
 const tempScaleShorthandMap = {
    '°F': 'fahrenheit',
    '°C': 'celsius',
    'K': 'kelvin',
 };
+const NUM_OF_DIGITS_AFTER_DEC_TO_ROUND = 2;
 
 let fromTempFormat = 'fahrenheit';
 let toTempFormat = 'fahrenheit';
@@ -44,9 +45,15 @@ toTempFormatButtons.forEach((button) => button.addEventListener('click', () => {
    button.classList.add('selected');
    calculate();
 }));
+userInputField.addEventListener('input', calculate);
+
+// run upon load
+calculate();
+
+// function declarations
 
 function calculate() {
-   tempConversionAlgorithms[fromTempFormat][toTempFormat]();
+   tempResultField.textContent = tempConversionAlgorithms[fromTempFormat][toTempFormat](+userInputField.value).toFixed(NUM_OF_DIGITS_AFTER_DEC_TO_ROUND);
 }
 
 // upon text field change
