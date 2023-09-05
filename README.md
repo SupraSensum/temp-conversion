@@ -1,5 +1,5 @@
 # temp-conversion
-Simple temperature conversion tool to practice project planning and all the HTML/CSS/JS learned to date
+Simple temperature conversion tool to practice project planning and some of the more recently learned HTML/CSS/JS topics
 
 ## Live Preview:
 
